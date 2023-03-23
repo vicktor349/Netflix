@@ -24,7 +24,7 @@ const Auth = () => {
                 </title>
             </Head>
             <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
-                <div className="bg-black w-full h-full lg:bg-opacity-50">
+                <div className="bg-black w-full h-full bg-opacity-50">
                     <nav className="px-12 py-5">
                         <Image
                             src={logo}
@@ -65,22 +65,12 @@ const Auth = () => {
                             <button className='bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition'>
                                 {variant === 'signin' ? 'sign in' : 'sign up'}
                             </button>
-                            {variant === 'register' && (
-                                <p className='text-neutral-500 mt-12'>
-                                    First time using Netflix?
-                                    <span onClick={toggleVariant} className='text-white ml-1 hover:underline cursor-pointer'>
-                                        create an account
-                                    </span>
-                                </p>
-                            )}
-                            {variant === 'signin' && (
-                                <p className='text-neutral-500 mt-6'>
-                                    Already have an Account?
-                                    <span onClick={toggleVariant} className='text-white ml-1 hover:underline cursor-pointer'>
-                                        Signin
-                                    </span>
-                                </p>
-                            )}
+                            <p className='text-neutral-500 mt-12'>
+                                {variant === 'signin' ? 'First time using Netflix?' : 'Already have an account?'}
+                                <span onClick={toggleVariant} className='text-white ml-1 hover:underline cursor-pointer'>
+                                    {variant === 'signin' ? 'create an account' : 'Sign In'}
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </div>
